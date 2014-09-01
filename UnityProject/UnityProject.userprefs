@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\XcSdkReceiver.cs">
+    <Files>
+      <File FileName="Assets\XcSdkBindings.cs" Line="19" Column="1" />
+      <File FileName="Assets\XcSdkReceiver.cs" Line="4" Column="27" />
+      <File FileName="Assets\XcSdkSender.cs" Line="7" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

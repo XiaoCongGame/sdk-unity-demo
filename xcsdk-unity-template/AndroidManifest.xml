@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tv.xiaocong.sdk.demo.unity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Only required for PP/Qihoo(360) payment -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Only required for Qihoo(360) payment -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="tv.xiaocong.sdk.security.RegisterActivity"
+            android:label="@string/xcsdk_register_title"
+            android:theme="@style/xcsdk_dialog" />
+        <activity
+            android:name="tv.xiaocong.sdk.security.LoginActivity"
+            android:label="@string/xcsdk_login_title"
+            android:theme="@style/xcsdk_dialog" >
+        </activity>
+        <activity
+            android:name="tv.xiaocong.sdk.ad.GameSplashActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.xiaocong.sdk.pay.PaymentActivity_"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.XCpay" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.xiaocong.sdk.pay.xccoin.XiaocongCoinPayActivity_"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.xiaocong.sdk.pay.ali.AliPayActivity_"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.xiaocong.sdk.pay.pp.PpPayActivity_"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.xiaocong.sdk.pay.qihoo.QihooPayActivity_"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.xiaocong.sdk.pay.yee.YeePayActivity_"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.xiaocong.sdk.pay.sheng.ShengPayActivity_"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <service
+            android:name="tv.xiaocong.sdk.ad.ApkDownloadSetupService"
+            android:exported="false" >
+        </service>
+
+        <!-- PP required -->
+        <activity
+            android:name="cn.pp.creditpayment.PPCreditInitialV1_1"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_loadingDialog"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.CreditUserAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_dialogAct"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.CreditAuthCode"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_dialogAct"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.CreditTopUp"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_dialogAct"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.InitialAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_loadingDialog"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.UserMessageAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_dialogAct"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.BankcardPayAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_dialogAct"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.SuccessAct"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_dialogAct"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="cn.pp.creditpayment.BankcardAgreement"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@style/pp_dialogAct"
+            android:windowSoftInputMode="stateUnchanged|stateAlwaysHidden" >
+        </activity>
+
+        <!-- 360 required -->
+        <activity
+            android:name="com.qihoopay.insdk.activity.ContainerActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.qihoopp.qcoinpay.QcoinActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPID。 -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_APPID"
+            android:value="102094835" >
+        </meta-data>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_APPKEY"
+            android:value="8689e00460eabb1e66277eb4232fde6f" >
+        </meta-data>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_PRIVATEKEY。此处value为private_key，其生成算法为md5(app_secret +”#”+ app_key)，全小写，详细算法请看开发文档附录。 -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值 。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_PRIVATEKEY"
+            android:value="4e04fe9ac8e2a73cbb27ba52ac076eb9" >
+        </meta-data>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_CHANNEL。此处value通常为default，如需修改请联系我们，并以字母开头，不支持纯数字，不支持中文等全角字符，用于标识应用方的子渠道。 -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_CHANNEL"
+            android:value="default" >
+        </meta-data>
+    </application>
+
+</manifest>
